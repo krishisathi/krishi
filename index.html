@@ -61,6 +61,7 @@
             color: white;
             font-size: 22px;
             box-shadow: 0 6px 14px rgba(13, 124, 63, 0.25);
+            cursor: pointer;
         }
 
         .brand-text {
@@ -74,6 +75,7 @@
             font-weight: 700;
             color: #1A2E1A;
             letter-spacing: -0.3px;
+            cursor: pointer;
         }
 
         .badge {
@@ -107,6 +109,12 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
             transition: 0.2s;
             cursor: pointer;
+            text-decoration: none;
+        }
+
+        .icon-btn:hover {
+            background: rgba(255,255,255,0.9);
+            transform: scale(1.05);
         }
 
         .icon-btn img {
@@ -219,6 +227,11 @@
             color: #0D7C3F;
             font-weight: 500;
             text-decoration: none;
+            cursor: pointer;
+        }
+
+        .section-header a:hover {
+            text-decoration: underline;
         }
 
         .quick-grid {
@@ -246,6 +259,8 @@
             flex-direction: column;
             align-items: center;
             gap: 4px;
+            text-decoration: none;
+            color: inherit;
         }
 
         .quick-item::after {
@@ -324,7 +339,7 @@
             box-shadow: 0 4px 12px rgba(13, 124, 63, 0.2);
         }
 
-        /* ===== ALL SERVICES (প্রতি সারিতে ৩টি) ===== */
+        /* ===== ALL SERVICES ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -343,6 +358,8 @@
             box-shadow: 0 4px 16px rgba(0,0,0,0.03);
             transition: all 0.2s ease;
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
         }
 
         .service-item:hover {
@@ -377,7 +394,7 @@
             display: block;
         }
 
-        /* ===== FARMER STORIES (উন্নত) ===== */
+        /* ===== FARMER STORIES ===== */
         .stories-section {
             margin: 16px 0 12px;
             width: 100%;
@@ -552,6 +569,7 @@
             border-radius: 30px;
             cursor: pointer;
             transition: 0.2s;
+            text-decoration: none;
         }
 
         .nav-item i {
@@ -571,6 +589,10 @@
 
         .nav-item.active i {
             color: #0D7C3F;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-2px);
         }
 
         /* Gradients */
@@ -667,15 +689,15 @@
     <!-- HEADER -->
     <div class="top-bar">
         <div class="brand">
-            <div class="brand-logo"><i class="fas fa-leaf"></i></div>
+            <div class="brand-logo" onclick="location.href='index.html'"><i class="fas fa-leaf"></i></div>
             <div class="brand-text">
-                <h1>কৃষি সাথী</h1>
+                <h1 onclick="location.href='index.html'">কৃষি সাথী</h1>
                 <span class="badge">v2.0</span>
             </div>
         </div>
         <div class="actions">
-            <div class="icon-btn"><i class="far fa-bell"></i></div>
-            <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%230D7C3F'/%3E%3Ctext x='20' y='26' font-size='16' text-anchor='middle' fill='white' font-weight='bold'%3E🌾%3C/text%3E%3C/svg%3E" alt="profile"></div>
+            <a href="notification.html" class="icon-btn"><i class="far fa-bell"></i></a>
+            <a href="profile.html" class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%230D7C3F'/%3E%3Ctext x='20' y='26' font-size='16' text-anchor='middle' fill='white' font-weight='bold'%3E🌾%3C/text%3E%3C/svg%3E" alt="profile"></a>
         </div>
     </div>
 
@@ -698,106 +720,105 @@
     <!-- QUICK ACTIONS -->
     <div class="section-header">
         <h4>⚡ দ্রুত সেবা</h4>
-        <a href="#">সব দেখুন →</a>
+        <a onclick="location.href='all-services.html'">সব দেখুন →</a>
     </div>
     <div class="quick-grid">
-        <div class="quick-item" onclick="alert('আবহাওয়া সেবা')">
+        <a href="..." class="quick-item">
             <div class="icon-bg grad-green"><i class="fas fa-cloud-sun"></i></div>
             <span class="label-text">আবহাওয়া</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="quick-item" onclick="alert('রোগ শনাক্তকরণ সেবা')">
+        </a>
+        <a href="disease-detection.html" class="quick-item">
             <div class="icon-bg grad-red"><i class="fas fa-bug"></i></div>
             <span class="label-text">রোগ শনাক্ত</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="quick-item" onclick="alert('বাজার দর সেবা')">
+        </a>
+        <a href="market-price.html" class="quick-item">
             <div class="icon-bg grad-orange"><i class="fas fa-chart-line"></i></div>
             <span class="label-text">বাজার দর</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="quick-item" onclick="alert('মাটি পরীক্ষা সেবা')">
+        </a>
+        <a href="soil-test.html" class="quick-item">
             <div class="icon-bg grad-teal"><i class="fas fa-flask"></i></div>
             <span class="label-text">মাটি পরীক্ষা</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="quick-item" onclick="alert('কৃষি পরামর্শ সেবা')">
+        </a>
+        <a href="expert-advice.html" class="quick-item">
             <div class="icon-bg grad-purple"><i class="fas fa-user-tie"></i></div>
             <span class="label-text">কৃষি পরামর্শ</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
-        <div class="quick-item" onclick="alert('বীজ ক্রয় সেবা')">
+        </a>
+        <a href="seed-purchase.html" class="quick-item">
             <div class="icon-bg grad-pink"><i class="fas fa-seedling"></i></div>
             <span class="label-text">বীজ ক্রয়</span>
             <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
-        </div>
+        </a>
     </div>
 
-    <!-- ALL SERVICES (প্রতি সারিতে ৩টি) -->
+    <!-- ALL SERVICES -->
     <div class="section-header">
         <h4>🌿 সকল সেবা</h4>
-        <a href="#">সব দেখুন →</a>
+        <a onclick="location.href='all-services.html'">সব দেখুন →</a>
     </div>
     <div class="services-grid">
-        <div class="service-item">
+        <a href="crop-planning.html" class="service-item">
             <div class="circle-icon grad-green"><i class="fas fa-seedling"></i></div>
             <span>ফসল পরিকল্পনা</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="fertilizer.html" class="service-item">
             <div class="circle-icon grad-blue"><i class="fas fa-flask"></i></div>
             <span>সার ও কীটনাশক</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="crop-insurance.html" class="service-item">
             <div class="circle-icon grad-purple"><i class="fas fa-shield-alt"></i></div>
             <span>ফসল বীমা</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="gov-scheme.html" class="service-item">
             <div class="circle-icon grad-orange"><i class="fas fa-university"></i></div>
             <span>সরকারি প্রকল্প</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="farm-equipment.html" class="service-item">
             <div class="circle-icon grad-teal"><i class="fas fa-tractor"></i></div>
             <span>কৃষি যন্ত্র</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="expert-consultation.html" class="service-item">
             <div class="circle-icon grad-pink"><i class="fas fa-user-md"></i></div>
             <span>বিশেষজ্ঞ পরামর্শ</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="agri-video.html" class="service-item">
             <div class="circle-icon grad-red"><i class="fas fa-video"></i></div>
             <span>কৃষি ভিডিও</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="nearby-store.html" class="service-item">
             <div class="circle-icon grad-blue"><i class="fas fa-store"></i></div>
             <span>নিকটবর্তী দোকান</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="report-issue.html" class="service-item">
             <div class="circle-icon grad-orange"><i class="fas fa-phone-alt"></i></div>
             <span>সমস্যা রিপোর্ট</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="more-services.html" class="service-item">
             <div class="circle-icon" style="background:#c0cac0;"><i class="fas fa-ellipsis-h" style="color:#2d3d2d;"></i></div>
             <span>আরও সেবা</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="social-service.html" class="service-item">
             <div class="circle-icon grad-dark"><i class="fas fa-hand-holding-heart"></i></div>
             <span>সামাজিক সেবা</span>
-        </div>
-        <div class="service-item">
+        </a>
+        <a href="environment-service.html" class="service-item">
             <div class="circle-icon grad-green"><i class="fas fa-tree"></i></div>
             <span>পরিবেশ সেবা</span>
-        </div>
+        </a>
     </div>
 
-    <!-- FARMER STORIES (উন্নত) -->
+    <!-- FARMER STORIES -->
     <div class="stories-section">
         <div class="section-header">
             <h4>👨‍🌾 কৃষকের গল্প</h4>
-            <a href="#">সব দেখুন →</a>
+            <a onclick="location.href='all-stories.html'">সব দেখুন →</a>
         </div>
 
-        <!-- গল্প ১ -->
-        <div class="story-card" onclick="alert('রহিম মিয়ার সম্পূর্ণ গল্প দেখুন')">
+        <div class="story-card" onclick="location.href='story-details.html?id=1'">
             <div class="story-header">
                 <div class="story-avatar">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%232E9B5E'/%3E%3Ctext x='24' y='30' font-size='20' text-anchor='middle' fill='white'%3E🌾%3C/text%3E%3C/svg%3E" alt="রহিম মিয়া">
@@ -823,8 +844,7 @@
             </div>
         </div>
 
-        <!-- গল্প ২ -->
-        <div class="story-card" onclick="alert('সুলতানা বেগমের সম্পূর্ণ গল্প দেখুন')">
+        <div class="story-card" onclick="location.href='story-details.html?id=2'">
             <div class="story-header">
                 <div class="story-avatar">
                     <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23D65C5C'/%3E%3Ctext x='24' y='30' font-size='20' text-anchor='middle' fill='white'%3E👩‍🌾%3C/text%3E%3C/svg%3E" alt="সুলতানা বেগম">
@@ -853,10 +873,10 @@
 
     <!-- BOTTOM NAV -->
     <div class="bottom-nav">
-        <div class="nav-item active"><i class="fas fa-home"></i> হোম</div>
-        <div class="nav-item"><i class="fas fa-search"></i> অনুসন্ধান</div>
-        <div class="nav-item"><i class="fas fa-th-large"></i> সেবা</div>
-        <div class="nav-item"><i class="fas fa-user"></i> প্রোফাইল</div>
+        <a href="index.html" class="nav-item active"><i class="fas fa-home"></i> হোম</a>
+        <a href="search.html" class="nav-item"><i class="fas fa-search"></i> অনুসন্ধান</a>
+        <a href="services.html" class="nav-item"><i class="fas fa-th-large"></i> সেবা</a>
+        <a href="https://krishisathi.github.io/Farmer-Registration/" class="nav-item"><i class="fas fa-user"></i> প্রোফাইল</a>
     </div>
 
 </div>
