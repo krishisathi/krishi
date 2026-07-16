@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>কৃষি সাথী – Home Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background: #e8efe8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 12px;
+        }
+
+        .app-container {
+            max-width: 480px;
+            width: 100%;
+            background: #F5F9F5;
+            border-radius: 40px 40px 30px 30px;
+            box-shadow: 0 20px 60px rgba(0, 30, 10, 0.15);
+            padding: 16px 16px 10px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        /* ----- HEADER ----- */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 4px 14px 4px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-logo {
+            background: linear-gradient(145deg, #0D7C3F, #2E9B5E);
+            width: 44px;
+            height: 44px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 22px;
+            box-shadow: 0 6px 14px rgba(13, 124, 63, 0.25);
+        }
+
+        .brand-text {
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .brand-text h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1A2E1A;
+            letter-spacing: -0.3px;
+        }
+
+        .badge {
+            background: rgba(13, 124, 63, 0.12);
+            color: #0D7C3F;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 40px;
+            border: 1px solid rgba(13, 124, 63, 0.15);
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-btn {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(4px);
+            width: 42px;
+            height: 42px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1A2E1A;
+            font-size: 18px;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .icon-btn img {
+            width: 36px;
+            height: 36px;
+            border-radius: 40px;
+            object-fit: cover;
+            border: 2px solid white;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(145deg, #0D7C3F, #1f9e5a);
+            border-radius: 28px;
+            margin-bottom: 18px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 12px 32px rgba(13, 124, 63, 0.25);
+            width: 100%;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1d3b1d, #3f7840);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-image .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(13, 124, 63, 0.2) 0%, rgba(13, 124, 63, 0.6) 100%);
+        }
+
+        .hero-text-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 18px 18px;
+            background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+        }
+
+        .typing-wrapper {
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .typing-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.3;
+            min-height: 48px;
+        }
+
+        .typing-text .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 22px;
+            background: #F5A623;
+            margin-left: 2px;
+            animation: blink 0.8s infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .typing-sub {
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            font-weight: 400;
+            margin-top: 4px;
+            min-height: 22px;
+        }
+
+        /* ====== QUICK ACTIONS ====== */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0 12px;
+            width: 100%;
+        }
+
+        .section-header h4 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #1A2E1A;
+        }
+
+        .section-header a {
+            font-size: 13px;
+            color: #0D7C3F;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .quick-item {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 28px;
+            padding: 16px 8px 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .quick-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(13, 124, 63, 0.08) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            border-radius: 28px;
+        }
+
+        .quick-item:active::after {
+            opacity: 1;
+            transition: opacity 0s;
+        }
+
+        .quick-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            background: rgba(255,255,255,0.9);
+        }
+
+        .quick-item:active {
+            transform: scale(0.96);
+            transition-duration: 0.05s;
+        }
+
+        .quick-item .icon-bg {
+            width: 56px;
+            height: 56px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .quick-item:hover .icon-bg {
+            transform: scale(1.04);
+        }
+
+        .quick-item .label-text {
+            font-size: 11px;
+            font-weight: 600;
+            color: #1A2E1A;
+            display: block;
+            line-height: 1.2;
+            margin-top: 2px;
+        }
+
+        .quick-item .arrow-btn {
+            background: rgba(13, 124, 63, 0.08);
+            color: #0D7C3F;
+            width: 24px;
+            height: 24px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            transition: all 0.2s ease;
+            margin-top: 2px;
+            border: 1px solid rgba(13, 124, 63, 0.05);
+        }
+
+        .quick-item:hover .arrow-btn {
+            background: #0D7C3F;
+            color: white;
+            transform: translateX(2px);
+            box-shadow: 0 4px 12px rgba(13, 124, 63, 0.2);
+        }
+
+        /* ===== ALL SERVICES (প্রতি সারিতে ৩টি) ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 18px;
+            width: 100%;
+        }
+
+        .service-item {
+            background: rgba(255,255,255,0.7);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
+            padding: 16px 8px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.5);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            background: rgba(255,255,255,0.95);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+        }
+
+        .service-item .circle-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            margin: 0 auto 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease;
+        }
+
+        .service-item:hover .circle-icon {
+            transform: scale(1.05);
+        }
+
+        .service-item span {
+            font-size: 11px;
+            font-weight: 500;
+            color: #1A2E1A;
+            line-height: 1.2;
+            display: block;
+        }
+
+        /* ===== FARMER STORIES (উন্নত) ===== */
+        .stories-section {
+            margin: 16px 0 12px;
+            width: 100%;
+        }
+
+        .stories-section .section-header {
+            padding: 0 0 12px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 24px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+            border: 1px solid rgba(255,255,255,0.6);
+            margin-bottom: 14px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .story-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        }
+
+        .story-card .story-header {
+            display: flex;
+            align-items: center;
+            padding: 14px 16px;
+            gap: 12px;
+            background: rgba(13, 124, 63, 0.03);
+            border-bottom: 1px solid rgba(13, 124, 63, 0.06);
+        }
+
+        .story-card .story-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 30px;
+            object-fit: cover;
+            border: 2px solid #0D7C3F;
+            flex-shrink: 0;
+            background: linear-gradient(145deg, #2E9B5E, #0D7C3F);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .story-card .story-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            object-fit: cover;
+        }
+
+        .story-card .story-meta {
+            flex: 1;
+        }
+
+        .story-card .story-meta .name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1A2E1A;
+        }
+
+        .story-card .story-meta .location {
+            font-size: 12px;
+            color: #6B7A6B;
+        }
+
+        .story-card .story-meta .badge-success {
+            background: rgba(13, 124, 63, 0.1);
+            color: #0D7C3F;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 2px;
+        }
+
+        .story-card .story-body {
+            padding: 14px 16px 16px;
+        }
+
+        .story-card .story-body .problem {
+            background: rgba(245, 166, 35, 0.08);
+            border-left: 3px solid #F5A623;
+            padding: 10px 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .story-card .story-body .problem .label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #F5A623;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .story-card .story-body .problem .text {
+            font-size: 13px;
+            color: #1A2E1A;
+            font-weight: 500;
+        }
+
+        .story-card .story-body .solution {
+            background: rgba(13, 124, 63, 0.06);
+            border-left: 3px solid #0D7C3F;
+            padding: 10px 12px;
+            border-radius: 12px;
+        }
+
+        .story-card .story-body .solution .label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #0D7C3F;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .story-card .story-body .solution .text {
+            font-size: 13px;
+            color: #1A2E1A;
+            font-weight: 500;
+        }
+
+        .story-card .story-body .result {
+            margin-top: 10px;
+            background: linear-gradient(145deg, #0D7C3F, #2E9B5E);
+            padding: 8px 14px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .story-card .story-body .result i {
+            font-size: 14px;
+        }
+
+        /* ----- BOTTOM NAV ----- */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 6px 6px;
+            margin-top: 14px;
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            width: 100%;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 10px;
+            color: #6B7A6B;
+            font-weight: 500;
+            gap: 2px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+            color: #6B7A6B;
+        }
+
+        .nav-item.active i {
+            color: #0D7C3F;
+        }
+
+        .nav-item.active {
+            background: rgba(13, 124, 63, 0.08);
+            color: #0D7C3F;
+            font-weight: 600;
+        }
+
+        .nav-item.active i {
+            color: #0D7C3F;
+        }
+
+        /* Gradients */
+        .grad-green { background: linear-gradient(145deg, #0D7C3F, #2E9B5E); }
+        .grad-orange { background: linear-gradient(145deg, #F5A623, #f7b73e); }
+        .grad-blue { background: linear-gradient(145deg, #2d7b9b, #4b9fc7); }
+        .grad-red { background: linear-gradient(145deg, #b13b3b, #d65c5c); }
+        .grad-teal { background: linear-gradient(145deg, #1d7a7a, #3ba8a8); }
+        .grad-purple { background: linear-gradient(145deg, #7c4d9b, #a06fc7); }
+        .grad-pink { background: linear-gradient(145deg, #b1437a, #d86a9e); }
+        .grad-dark { background: linear-gradient(145deg, #2d3d2d, #4a5a4a); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 400px) {
+            .app-container {
+                padding: 12px 12px 8px;
+                border-radius: 28px;
+            }
+            .quick-grid {
+                gap: 10px;
+            }
+            .quick-item .icon-bg {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+            .quick-item .label-text {
+                font-size: 10px;
+            }
+            .services-grid {
+                gap: 8px;
+            }
+            .service-item .circle-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 17px;
+            }
+            .service-item span {
+                font-size: 10px;
+            }
+            .brand-text h1 {
+                font-size: 17px;
+            }
+            .hero-image {
+                height: 170px;
+            }
+            .typing-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .quick-grid {
+                gap: 6px;
+            }
+            .quick-item {
+                padding: 12px 4px 10px;
+                border-radius: 20px;
+            }
+            .quick-item .icon-bg {
+                width: 40px;
+                height: 40px;
+                font-size: 17px;
+            }
+            .quick-item .label-text {
+                font-size: 9px;
+            }
+            .quick-item .arrow-btn {
+                width: 20px;
+                height: 20px;
+                font-size: 8px;
+            }
+            .services-grid {
+                gap: 6px;
+            }
+            .service-item {
+                padding: 12px 4px;
+                border-radius: 18px;
+            }
+            .service-item .circle-icon {
+                width: 34px;
+                height: 34px;
+                font-size: 14px;
+            }
+            .service-item span {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="app-container">
+
+    <!-- HEADER -->
+    <div class="top-bar">
+        <div class="brand">
+            <div class="brand-logo"><i class="fas fa-leaf"></i></div>
+            <div class="brand-text">
+                <h1>কৃষি সাথী</h1>
+                <span class="badge">v2.0</span>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="icon-btn"><i class="far fa-bell"></i></div>
+            <div class="icon-btn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%230D7C3F'/%3E%3Ctext x='20' y='26' font-size='16' text-anchor='middle' fill='white' font-weight='bold'%3E🌾%3C/text%3E%3C/svg%3E" alt="profile"></div>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="hero-section">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=400&fit=crop" alt="কৃষি জমি">
+            <div class="overlay"></div>
+            <div class="hero-text-overlay">
+                <div class="typing-wrapper">
+                    <div class="typing-text" id="typingText">
+                        <span id="textDisplay"></span><span class="cursor"></span>
+                    </div>
+                    <div class="typing-sub" id="subText"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK ACTIONS -->
+    <div class="section-header">
+        <h4>⚡ দ্রুত সেবা</h4>
+        <a href="#">সব দেখুন →</a>
+    </div>
+    <div class="quick-grid">
+        <div class="quick-item" onclick="alert('আবহাওয়া সেবা')">
+            <div class="icon-bg grad-green"><i class="fas fa-cloud-sun"></i></div>
+            <span class="label-text">আবহাওয়া</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="quick-item" onclick="alert('রোগ শনাক্তকরণ সেবা')">
+            <div class="icon-bg grad-red"><i class="fas fa-bug"></i></div>
+            <span class="label-text">রোগ শনাক্ত</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="quick-item" onclick="alert('বাজার দর সেবা')">
+            <div class="icon-bg grad-orange"><i class="fas fa-chart-line"></i></div>
+            <span class="label-text">বাজার দর</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="quick-item" onclick="alert('মাটি পরীক্ষা সেবা')">
+            <div class="icon-bg grad-teal"><i class="fas fa-flask"></i></div>
+            <span class="label-text">মাটি পরীক্ষা</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="quick-item" onclick="alert('কৃষি পরামর্শ সেবা')">
+            <div class="icon-bg grad-purple"><i class="fas fa-user-tie"></i></div>
+            <span class="label-text">কৃষি পরামর্শ</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="quick-item" onclick="alert('বীজ ক্রয় সেবা')">
+            <div class="icon-bg grad-pink"><i class="fas fa-seedling"></i></div>
+            <span class="label-text">বীজ ক্রয়</span>
+            <div class="arrow-btn"><i class="fas fa-chevron-right"></i></div>
+        </div>
+    </div>
+
+    <!-- ALL SERVICES (প্রতি সারিতে ৩টি) -->
+    <div class="section-header">
+        <h4>🌿 সকল সেবা</h4>
+        <a href="#">সব দেখুন →</a>
+    </div>
+    <div class="services-grid">
+        <div class="service-item">
+            <div class="circle-icon grad-green"><i class="fas fa-seedling"></i></div>
+            <span>ফসল পরিকল্পনা</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-blue"><i class="fas fa-flask"></i></div>
+            <span>সার ও কীটনাশক</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-purple"><i class="fas fa-shield-alt"></i></div>
+            <span>ফসল বীমা</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-orange"><i class="fas fa-university"></i></div>
+            <span>সরকারি প্রকল্প</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-teal"><i class="fas fa-tractor"></i></div>
+            <span>কৃষি যন্ত্র</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-pink"><i class="fas fa-user-md"></i></div>
+            <span>বিশেষজ্ঞ পরামর্শ</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-red"><i class="fas fa-video"></i></div>
+            <span>কৃষি ভিডিও</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-blue"><i class="fas fa-store"></i></div>
+            <span>নিকটবর্তী দোকান</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-orange"><i class="fas fa-phone-alt"></i></div>
+            <span>সমস্যা রিপোর্ট</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon" style="background:#c0cac0;"><i class="fas fa-ellipsis-h" style="color:#2d3d2d;"></i></div>
+            <span>আরও সেবা</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-dark"><i class="fas fa-hand-holding-heart"></i></div>
+            <span>সামাজিক সেবা</span>
+        </div>
+        <div class="service-item">
+            <div class="circle-icon grad-green"><i class="fas fa-tree"></i></div>
+            <span>পরিবেশ সেবা</span>
+        </div>
+    </div>
+
+    <!-- FARMER STORIES (উন্নত) -->
+    <div class="stories-section">
+        <div class="section-header">
+            <h4>👨‍🌾 কৃষকের গল্প</h4>
+            <a href="#">সব দেখুন →</a>
+        </div>
+
+        <!-- গল্প ১ -->
+        <div class="story-card" onclick="alert('রহিম মিয়ার সম্পূর্ণ গল্প দেখুন')">
+            <div class="story-header">
+                <div class="story-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%232E9B5E'/%3E%3Ctext x='24' y='30' font-size='20' text-anchor='middle' fill='white'%3E🌾%3C/text%3E%3C/svg%3E" alt="রহিম মিয়া">
+                </div>
+                <div class="story-meta">
+                    <div class="name">রহিম মিয়া</div>
+                    <div class="location">📍 নরসিংদী, বাংলাদেশ</div>
+                    <span class="badge-success">✅ যাচাইকৃত</span>
+                </div>
+            </div>
+            <div class="story-body">
+                <div class="problem">
+                    <span class="label">⚠️ সমস্যা</span>
+                    <div class="text">ধানের গাছ হলুদ হয়ে যাচ্ছিল এবং উৎপাদন কমছিল। মাটি পরীক্ষা না করায় পুষ্টির অভাব হচ্ছিল।</div>
+                </div>
+                <div class="solution">
+                    <span class="label">💡 সমাধান</span>
+                    <div class="text">কৃষি সাথী অ্যাপের মাধ্যমে মাটি পরীক্ষা করান। পটাশিয়াম ও নাইট্রোজেনযুক্ত সার প্রয়োগের পরামর্শ পান।</div>
+                </div>
+                <div class="result">
+                    <i class="fas fa-arrow-up"></i> ফলন বেড়েছে ৪০%
+                </div>
+            </div>
+        </div>
+
+        <!-- গল্প ২ -->
+        <div class="story-card" onclick="alert('সুলতানা বেগমের সম্পূর্ণ গল্প দেখুন')">
+            <div class="story-header">
+                <div class="story-avatar">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23D65C5C'/%3E%3Ctext x='24' y='30' font-size='20' text-anchor='middle' fill='white'%3E👩‍🌾%3C/text%3E%3C/svg%3E" alt="সুলতানা বেগম">
+                </div>
+                <div class="story-meta">
+                    <div class="name">সুলতানা বেগম</div>
+                    <div class="location">📍 যশোর, বাংলাদেশ</div>
+                    <span class="badge-success">✅ যাচাইকৃত</span>
+                </div>
+            </div>
+            <div class="story-body">
+                <div class="problem">
+                    <span class="label">⚠️ সমস্যা</span>
+                    <div class="text">শীতকালীন সবজি ক্ষেতে পোকামাকড়ের আক্রমণ বেড়ে গিয়েছিল। কীটনাশক ব্যবহার করেও কাজ হচ্ছিল না।</div>
+                </div>
+                <div class="solution">
+                    <span class="label">💡 সমাধান</span>
+                    <div class="text">কৃষি সাথী অ্যাপের রোগ শনাক্তকরণ ফিচার ব্যবহার করে সঠিক কীটনাশক সনাক্ত করেন এবং জৈব পদ্ধতি অবলম্বন করেন।</div>
+                </div>
+                <div class="result">
+                    <i class="fas fa-arrow-up"></i> উৎপাদন বেড়েছে ৬০%
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAV -->
+    <div class="bottom-nav">
+        <div class="nav-item active"><i class="fas fa-home"></i> হোম</div>
+        <div class="nav-item"><i class="fas fa-search"></i> অনুসন্ধান</div>
+        <div class="nav-item"><i class="fas fa-th-large"></i> সেবা</div>
+        <div class="nav-item"><i class="fas fa-user"></i> প্রোফাইল</div>
+    </div>
+
+</div>
+
+<!-- ===== TYPING ANIMATION SCRIPT ===== -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const texts = [
+            "আধুনিক প্রযুক্তিতে স্মার্ট চাষ",
+            "বিজ্ঞানের সঠিক ব্যবহারে লাভবান হোন"
+        ];
+        
+        const subTexts = [
+            "নির্ভুল তথ্য, সঠিক সিদ্ধান্ত",
+            "আমাদের সাথে থাকুন, এগিয়ে যান"
+        ];
+
+        const textDisplay = document.getElementById('textDisplay');
+        const subDisplay = document.getElementById('subText');
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let isFirstTextComplete = false;
+
+        function typeEffect() {
+            const currentText = texts[textIndex];
+            const currentSub = subTexts[textIndex];
+
+            if (!isDeleting) {
+                if (charIndex < currentText.length) {
+                    textDisplay.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                    setTimeout(typeEffect, 80);
+                } else {
+                    if (!isFirstTextComplete) {
+                        subDisplay.textContent = currentSub;
+                        isFirstTextComplete = true;
+                    }
+                    setTimeout(() => {
+                        isDeleting = true;
+                        setTimeout(typeEffect, 300);
+                    }, 2000);
+                }
+            } else {
+                if (charIndex > 0) {
+                    textDisplay.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(typeEffect, 50);
+                } else {
+                    isDeleting = false;
+                    isFirstTextComplete = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    subDisplay.textContent = '';
+                    setTimeout(typeEffect, 500);
+                }
+            }
+        }
+
+        setTimeout(typeEffect, 500);
+    });
+
+    // রিপল ইফেক্ট
+    document.querySelectorAll('.quick-item').forEach(item => {
+        item.addEventListener('mousemove', (e) => {
+            const rect = item.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            item.style.setProperty('--x', x + '%');
+            item.style.setProperty('--y', y + '%');
+        });
+    });
+</script>
+</body>
+</html>
