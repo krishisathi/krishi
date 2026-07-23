@@ -26,9 +26,10 @@
             margin: 0;
         }
 
+        /* ===== FULL-SCREEN CONTAINER ===== */
         .app-container {
-            max-width: 480px;
             width: 100%;
+            max-width: 1400px;
             background: #F5F9F5;
             padding: 0;
             position: relative;
@@ -36,6 +37,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 0 40px rgba(0,0,0,0.03);
         }
 
         .scroll-content {
@@ -675,7 +677,7 @@
             border-top: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 -4px 20px rgba(0,0,0,0.02);
             width: 100%;
-            max-width: 480px;
+            max-width: 1400px;
             position: fixed;
             bottom: 0;
             left: 50%;
@@ -744,7 +746,426 @@
         .grad-pink { background: linear-gradient(145deg, #b1437a, #d86a9e); }
         .grad-dark { background: linear-gradient(145deg, #2d3d2d, #4a5a4a); }
 
-        /* ===== RESPONSIVE ===== */
+        /* ============================================================ */
+        /* ===== RESPONSIVE: MOBILE FIRST (already above) ===== */
+        /* ===== TABLET & DESKTOP UPGRADE ===== */
+        @media (min-width: 600px) {
+            .scroll-content {
+                padding: 0 24px 90px 24px;
+            }
+
+            .top-bar {
+                padding: 16px 24px 14px 24px;
+            }
+
+            .brand-logo {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+                border-radius: 16px;
+            }
+
+            .brand-text h1 {
+                font-size: 22px;
+            }
+
+            .badge {
+                font-size: 10px;
+                padding: 2px 10px;
+            }
+
+            .icon-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .hero-section {
+                height: 220px;
+                border-radius: 24px;
+            }
+
+            .hero-text-overlay h2 {
+                font-size: 22px;
+            }
+
+            .hero-text-overlay p {
+                font-size: 14px;
+            }
+
+            .section-header h4 {
+                font-size: 18px;
+            }
+
+            .section-header a {
+                font-size: 13px;
+            }
+
+            .quick-grid {
+                gap: 14px;
+            }
+
+            .quick-item {
+                padding: 18px 10px 14px;
+                border-radius: 24px;
+            }
+
+            .quick-item .icon-bg {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+                border-radius: 28px;
+            }
+
+            .quick-item .label-text {
+                font-size: 12px;
+            }
+
+            .quick-item .arrow-btn {
+                width: 24px;
+                height: 24px;
+                font-size: 10px;
+            }
+
+            .services-grid {
+                gap: 14px;
+            }
+
+            .service-item {
+                padding: 18px 8px;
+                border-radius: 22px;
+            }
+
+            .service-item .circle-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+                border-radius: 28px;
+            }
+
+            .service-item span {
+                font-size: 12px;
+            }
+
+            .offer-card {
+                flex: 0 0 200px;
+                padding: 16px 18px;
+                border-radius: 20px;
+            }
+
+            .offer-card .offer-icon {
+                font-size: 32px;
+            }
+
+            .offer-card .offer-title {
+                font-size: 15px;
+            }
+
+            .offer-card .offer-cta {
+                font-size: 11px;
+                padding: 6px 16px;
+            }
+
+            .sponsor-card {
+                flex: 0 0 100px;
+                padding: 14px 10px;
+                border-radius: 20px;
+            }
+
+            .sponsor-card .sponsor-logo {
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+                border-radius: 14px;
+            }
+
+            .sponsor-card .sponsor-name {
+                font-size: 11px;
+            }
+
+            .bottom-nav {
+                padding: 10px 10px 14px;
+                border-radius: 0;
+            }
+
+            .nav-item {
+                font-size: 10px;
+                padding: 6px 12px;
+            }
+
+            .nav-item i {
+                font-size: 20px;
+            }
+
+            .dropdown-menu {
+                min-width: 220px;
+                right: 0;
+            }
+
+            .dropdown-menu .menu-item {
+                padding: 12px 18px;
+                font-size: 14px;
+            }
+
+            .dropdown-menu .menu-item i {
+                width: 32px;
+                height: 32px;
+                font-size: 16px;
+            }
+        }
+
+        /* ===== DESKTOP LARGE (1200px+) ===== */
+        @media (min-width: 1200px) {
+            .app-container {
+                max-width: 1400px;
+                border-radius: 0;
+                box-shadow: none;
+                margin: 0 auto;
+            }
+
+            .scroll-content {
+                padding: 0 40px 100px 40px;
+            }
+
+            .top-bar {
+                padding: 20px 40px 18px 40px;
+            }
+
+            .brand-logo {
+                width: 56px;
+                height: 56px;
+                font-size: 28px;
+                border-radius: 18px;
+            }
+
+            .brand-text h1 {
+                font-size: 26px;
+            }
+
+            .badge {
+                font-size: 11px;
+                padding: 3px 12px;
+            }
+
+            .icon-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .hero-section {
+                height: 280px;
+                border-radius: 28px;
+                margin: 0 0 20px 0;
+            }
+
+            .hero-text-overlay {
+                padding: 24px 28px 22px;
+            }
+
+            .hero-text-overlay h2 {
+                font-size: 28px;
+            }
+
+            .hero-text-overlay p {
+                font-size: 16px;
+            }
+
+            .hero-dots {
+                bottom: 12px;
+                right: 20px;
+                gap: 8px;
+            }
+
+            .hero-dots .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .hero-dots .dot.active {
+                width: 24px;
+            }
+
+            .section-header {
+                padding: 10px 0 14px 0;
+            }
+
+            .section-header h4 {
+                font-size: 20px;
+            }
+
+            .section-header a {
+                font-size: 14px;
+            }
+
+            /* Quick Services: 3 columns, larger */
+            .quick-grid {
+                gap: 18px;
+                margin-bottom: 20px;
+            }
+
+            .quick-item {
+                padding: 22px 12px 16px;
+                border-radius: 28px;
+            }
+
+            .quick-item .icon-bg {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+                border-radius: 32px;
+            }
+
+            .quick-item .label-text {
+                font-size: 13px;
+            }
+
+            .quick-item .arrow-btn {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+
+            /* All Services: 4 columns on large desktop */
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+                margin-bottom: 18px;
+            }
+
+            .service-item {
+                padding: 20px 10px;
+                border-radius: 24px;
+            }
+
+            .service-item .circle-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+                border-radius: 30px;
+            }
+
+            .service-item span {
+                font-size: 13px;
+            }
+
+            /* Sponsored: more cards visible */
+            .sponsor-card {
+                flex: 0 0 120px;
+                padding: 16px 12px;
+                border-radius: 22px;
+            }
+
+            .sponsor-card .sponsor-logo {
+                width: 56px;
+                height: 56px;
+                font-size: 22px;
+                border-radius: 16px;
+            }
+
+            .sponsor-card .sponsor-name {
+                font-size: 12px;
+            }
+
+            /* Offer cards */
+            .offer-card {
+                flex: 0 0 240px;
+                padding: 18px 22px;
+                border-radius: 22px;
+            }
+
+            .offer-card .offer-icon {
+                font-size: 36px;
+            }
+
+            .offer-card .offer-title {
+                font-size: 17px;
+            }
+
+            .offer-card .offer-cta {
+                font-size: 12px;
+                padding: 6px 18px;
+            }
+
+            .offer-card .discount-badge {
+                font-size: 11px;
+                padding: 3px 14px;
+            }
+
+            /* Bottom nav */
+            .bottom-nav {
+                padding: 12px 20px 16px;
+                max-width: 1400px;
+            }
+
+            .nav-item {
+                font-size: 11px;
+                padding: 8px 16px;
+            }
+
+            .nav-item i {
+                font-size: 22px;
+            }
+
+            .nav-item.active::before {
+                width: 28px;
+                height: 4px;
+                top: -10px;
+            }
+
+            .dropdown-menu {
+                min-width: 250px;
+                padding: 8px;
+            }
+
+            .dropdown-menu .menu-item {
+                padding: 14px 20px;
+                font-size: 15px;
+                gap: 12px;
+            }
+
+            .dropdown-menu .menu-item i {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+                border-radius: 12px;
+            }
+        }
+
+        /* ===== ULTRA-WIDE (1600px+) ===== */
+        @media (min-width: 1600px) {
+            .app-container {
+                max-width: 100%;
+                padding: 0 60px;
+            }
+
+            .scroll-content {
+                padding: 0 60px 110px 60px;
+            }
+
+            .top-bar {
+                padding: 24px 60px 20px 60px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+
+            .quick-grid {
+                gap: 22px;
+            }
+
+            .hero-section {
+                height: 320px;
+            }
+
+            .hero-text-overlay h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* ===== MOBILE SMALL ===== */
         @media (max-width: 400px) {
             .scroll-content { padding: 0 12px 72px 12px; }
             .top-bar { padding: 10px 12px 8px 12px; }
@@ -807,14 +1228,12 @@
                     <i class="fas fa-user-circle"></i>
                 </div>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <!-- রেজিস্টার লিংক -->
                     <a href="https://krishisathi.github.io/Farmer-Registration/" class="menu-item" target="_blank">
                         <i class="fas fa-user-plus icon-register"></i>
                         <span class="item-label">নিবন্ধন করুন</span>
                         <i class="fas fa-chevron-right item-arrow"></i>
                     </a>
                     <div class="menu-divider"></div>
-                    <!-- লগইন (পরে যোগ করা হবে) -->
                     <button class="menu-item" onclick="alert('লগইন পেজ শীঘ্রই আসছে!')">
                         <i class="fas fa-sign-in-alt icon-login"></i>
                         <span class="item-label">লগইন করুন</span>
